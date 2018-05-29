@@ -61,6 +61,7 @@ module FirstData
 
 		def access_token
 			@access_token = @access_token != nil && @access_token.valid_token? ? @access_token : get_access_token
+			@access_token.accessToken
 		end
 
 		def get_access_token

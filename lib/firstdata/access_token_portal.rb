@@ -7,7 +7,8 @@ module FirstData
 
 		def get_token
 			path = "/security/access-tokens"
-			response = @config.http.get_token(path)
+			response = @config.http.token_request(path)
+			parse_response(response)
 		end
 		
 		def parse_response(response)
