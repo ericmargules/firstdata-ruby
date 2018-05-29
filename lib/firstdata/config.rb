@@ -1,0 +1,71 @@
+module FirstData
+	class Config
+		BASE_URL = "firstapi-dev.pjknhgyuhb.us-east-1.elasticbeanstalk.com"
+
+		ACCESSOR_ATTRIBUTES = [
+			:api_key,
+			:api_secret,
+			:app_id,
+			:environment,
+			:content_type,
+			:default_currency
+		]
+		
+		READER_ATTRIBUTES = [
+			:client_id
+		]
+
+		attr_accessor *ACCESSOR_ATTRIBUTES
+		attr_reader *READER_ATTRIBUTES
+
+		def initialize(params={})
+			ACCESSOR_ATTRIBUTES.each { |attr| instance_variable_set "@#{attr}", params[attr] }
+		end
+
+		def http
+			HTTP.new(self)
+		end
+
+		def base_url
+			http_protocol + BASE_URL
+		end
+
+		def http_protocol
+			ssl? ? "https://" : "http://"
+		end
+		
+		def ssl?
+			case @environment
+			when "development"
+				false
+			when "production"
+				true
+			end
+		end
+
+		def content_type
+			@content_type == nil ? "application/json" : @content_type
+		end
+
+		def user_agent
+			"First Data Ruby Gem #{FirstData::ReleaseVersion::Number}"
+		end
+
+		def signature
+			Signature.new(
+				api_key: @api_key,
+				api_secret: @api_secret,
+				token: "something"
+			)
+		end
+
+		def access_token
+			@access_token = @access_token != nil && @access_token.valid_token? ? @access_token : get_access_token
+		end
+
+		def get_access_token
+			token_portal = AccessTokenPortal.new(self)
+			token_portal.get_token
+		end
+	end
+end
