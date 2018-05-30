@@ -2,24 +2,18 @@ module FirstData
 	class Config
 		BASE_URL = "firstapi-dev.pjknhgyuhb.us-east-1.elasticbeanstalk.com"
 
-		ACCESSOR_ATTRIBUTES = [
+		ATTR = [
 			:api_key,
 			:api_secret,
 			:app_id,
 			:environment,
-			:content_type,
 			:default_currency
 		]
-		
-		READER_ATTRIBUTES = [
-			:client_id
-		]
-
-		attr_accessor *ACCESSOR_ATTRIBUTES
-		attr_reader *READER_ATTRIBUTES
+	
+		attr_accessor *ATTR
 
 		def initialize(params={})
-			ACCESSOR_ATTRIBUTES.each { |attr| instance_variable_set "@#{attr}", params[attr] }
+			ATTR.each { |attr| instance_variable_set "@#{attr}", params[attr] }
 		end
 
 		def http
@@ -44,7 +38,7 @@ module FirstData
 		end
 
 		def content_type
-			@content_type == nil ? "application/json" : @content_type
+			"application/json"
 		end
 
 		def user_agent
