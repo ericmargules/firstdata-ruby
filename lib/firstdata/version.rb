@@ -1,9 +1,9 @@
 module FirstData
 	module ReleaseVersion
-		Major = 0
-		Minor = 0
-		Patch = 1
+		MAJOR = 0
+		MINOR = 0
+		PATCH = 1
 
-		Number = "#{Major}.#{Minor}.#{Patch}"
+		NUMBER = "#{MAJOR}.#{MINOR}.#{PATCH}"
 	end
 end

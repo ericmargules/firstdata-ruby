@@ -1,6 +1,7 @@
 module FirstData
 	class Config
-		BASE_URL = "firstapi-dev.pjknhgyuhb.us-east-1.elasticbeanstalk.com"
+		# BASE_URL = "firstapi-dev.pjknhgyuhb.us-east-1.elasticbeanstalk.com"
+		BASE_URL = "api-qa.payeezy.com/globalApi/v1"
 
 		ATTR = [
 			:api_key,
@@ -42,14 +43,13 @@ module FirstData
 		end
 
 		def user_agent
-			"First Data Ruby Gem #{FirstData::ReleaseVersion::Number}"
+			"First Data Ruby Gem #{FirstData::ReleaseVersion::NUMBER}"
 		end
 
 		def signature
 			Signature.new(
 				api_key: @api_key,
 				api_secret: @api_secret,
-				token: "something"
 			)
 		end
 
