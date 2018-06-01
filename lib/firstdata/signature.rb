@@ -12,18 +12,16 @@ module FirstData
 			@digest = "sha256" if !@digest
 		end
 
-		def sign(payload)
-			@timestamp = timestamp.to_s
-			@nonce = nonce
-			data = @api_key + @nonce + @timestamp
-			data += payload if !payload.empty?
+		def sign(payload=nil)
+			data = @api_key + nonce + timestamp
+			data += payload.to_json if payload
 			hmac = OpenSSL::HMAC.hexdigest(@digest, @api_secret, data)
 			Base64.urlsafe_encode64(hmac)
 		end
 
 		def nonce
-			@nonce ||= "879879797888988888897"
-			# SecureRandom.base64
+			"879879797888988888897"
+			# @nonce ||= SecureRandom.base64
 		end
 
 		def timestamp

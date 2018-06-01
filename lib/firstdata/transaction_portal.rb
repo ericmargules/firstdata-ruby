@@ -7,7 +7,7 @@ module FirstData
 
 		# Full or partial capture of an existing transaction
 		def capture(args)
-			path = "#{@config.base_url}/payments/#{args[trans_id]}/postauth"
+			path = "/payments/#{args[trans_id]}/postauth"
 			body = SecondaryTransaction.new(args)
 			response = @config.http.post(path, body)
 			CertificateCreationResponse.new(JSON.parse(response.body))
@@ -15,7 +15,7 @@ module FirstData
 
 		# Query existing transaction
 		def query(trans_id)
-			path = "#{@config.base_url}/payments/#{trans_id}"
+			path = "/payments/#{trans_id}"
 			response = @config.http.get(path)
 			parse_response(response)
 		end
@@ -34,7 +34,7 @@ module FirstData
 		def void(trans_id)
 			path = "payments/#{trans_id}/void"
 			_process(path)
-			# response = @config.http.post(path)
+			response = @config.http.post(path)
 		end
 
 		def auth(args={})
@@ -59,7 +59,7 @@ module FirstData
 		end
 
 		def _process(path, body=nil)
-			response = @config.http.post(@config.base_url + path, body)
+			response = @config.http.post(path, body)
 			parse_response(response)
 		end
 
