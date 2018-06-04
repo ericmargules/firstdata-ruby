@@ -7,8 +7,6 @@ module FirstData
 			:api_key,
 			:api_secret,
 			:app_id,
-			:environment,
-			:default_currency
 		]
 	
 		attr_accessor *ATTR
@@ -26,16 +24,7 @@ module FirstData
 		end
 
 		def http_protocol
-			ssl? ? "https://" : "http://"
-		end
-		
-		def ssl?
-			case @environment
-			when "development"
-				false
-			when "production"
-				true
-			end
+			"https://"
 		end
 
 		def content_type

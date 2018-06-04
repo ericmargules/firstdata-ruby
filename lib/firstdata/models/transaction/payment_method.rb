@@ -21,9 +21,9 @@ module FirstData
 
 		def detect_payment_method(params)
 			case params[:type].to_s
-			when "paymentCard"
+			when "PAYMENT_CARD"
 				params[:paymentCard] = PaymentCard.new(params) if params[:number]
-			when "sepaDirectDebit"
+			when "SEPA_DIRECT_DEBIT"
 				params[:sepaDirectDebit] = SepaDirectDebit.new(params) if params[:iban]
 			when "applePay"
 				params[:applePay] = ApplePay.new(params) if params[:data]

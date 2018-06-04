@@ -4,7 +4,7 @@ module FirstData
 
 		ATTR = [
 			:number,
-			:securityCode,
+			:cardCodeValue,
 			:cardFunction,
 			:cardholderName,
 			:authenticationRequest,

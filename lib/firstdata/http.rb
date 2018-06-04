@@ -15,18 +15,18 @@ module FirstData
 
 		def http_request(verb, path, body)
 			signature = @config.signature
-			body = body.to_json if body
+
+			puts JSON.pretty_generate(body.to_hash)
 
 			request_headers = {
 				"Content-Type" => @config.content_type,
 				"Client-Request-Id" => signature.nonce,
 				"Api-Key" => @config.api_key,
 				"Timestamp" => signature.timestamp,
-				"Message-Signature" => signature.sign(body)#,
-				# "User-Agent" => @config.config.user_agent
-				# "App-Id" => @config.app_id,
-				# "Access-Token" => @config.access_token
+				"Message-Signature" => signature.sign(body)
 			}
+
+			request_headers.each {|k,v| puts "#{k}: #{v}"}
 
 			_http_request(verb, request_headers, path, body)
 

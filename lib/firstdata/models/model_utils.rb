@@ -36,7 +36,7 @@ module FirstData
 		end
 
 		def to_json
-			JSON.generate(self.to_hash)
+			JSON.pretty_generate(self.to_hash, {space: ' ', space_before: '', object_nl: "\r\n"})
 		end
 
 		def to_hash
