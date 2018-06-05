@@ -21,7 +21,7 @@ module FirstData
 		end
 
 		# Full or partial refund of existing transaction
-		def refund(args)
+		def refund(trans_id, args=nil)
 			process(SecondaryTransaction.new(args), "/#{args[trans_id]}/return")
 		end
 
@@ -32,9 +32,8 @@ module FirstData
 
 		# Reverse existing action on transaction
 		def void(trans_id)
-			path = "payments/#{trans_id}/void"
+			path = "/payments/#{trans_id}/void"
 			_process(path)
-			response = @config.http.post(path)
 		end
 
 		def auth(args={})

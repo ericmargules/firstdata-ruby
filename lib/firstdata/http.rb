@@ -15,9 +15,6 @@ module FirstData
 
 		def http_request(verb, path, body)
 			signature = @config.signature
-
-			puts JSON.pretty_generate(body.to_hash)
-
 			request_headers = {
 				"Content-Type" => @config.content_type,
 				"Client-Request-Id" => signature.nonce,
@@ -25,9 +22,6 @@ module FirstData
 				"Timestamp" => signature.timestamp,
 				"Message-Signature" => signature.sign(body)
 			}
-
-			request_headers.each {|k,v| puts "#{k}: #{v}"}
-
 			_http_request(verb, request_headers, path, body)
 
 		end
@@ -53,6 +47,8 @@ module FirstData
 			request = verb.new(uri.request_uri + path, headers)
 			request.body = body.to_json if body
 			response = http.request(request)
+			# puts "done"
+			# response
 		end
 	end
 end
