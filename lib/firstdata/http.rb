@@ -26,18 +26,6 @@ module FirstData
 
 		end
 
-		def token_request(path)
-			signature = @config.signature
-			request_headers = {
-				"Content-Type" => @config.content_type,
-				"Api-Key" => @config.api_key,
-				"Client-Request-Id" => signature.nonce,
-				"Timestamp" => signature.timestamp,
-				"Message-Signature" => signature.sign
-			}
-			_http_request(Net::HTTP::Post, request_headers, path)
-		end
-
 		def _http_request(verb, headers, path, body=nil)
 			uri = URI(@config.base_url)
 
@@ -47,8 +35,6 @@ module FirstData
 			request = verb.new(uri.request_uri + path, headers)
 			request.body = body.to_json if body
 			response = http.request(request)
-			# puts "done"
-			# response
 		end
 	end
 end
