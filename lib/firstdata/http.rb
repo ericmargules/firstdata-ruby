@@ -22,11 +22,11 @@ module FirstData
 				"Timestamp" => signature.timestamp,
 				"Message-Signature" => signature.sign(body)
 			}
-			_http_request(verb, request_headers, path, body)
+			_http_request(request_headers, verb, path, body)
 
 		end
 
-		def _http_request(verb, headers, path, body=nil)
+		def _http_request(headers, verb, path, body=nil)
 			uri = URI(@config.base_url)
 
 			http = Net::HTTP.new(uri.host, uri.port)

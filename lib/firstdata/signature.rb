@@ -15,7 +15,6 @@ module FirstData
 		def sign(payload=nil)
 			data = @api_key + nonce + timestamp
 			data += payload.to_json if payload
-			puts data
 			hmac = OpenSSL::HMAC.hexdigest(@digest, @api_secret, data)
 			Base64.urlsafe_encode64(hmac)
 		end

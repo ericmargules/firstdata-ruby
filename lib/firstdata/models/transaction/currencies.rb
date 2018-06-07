@@ -1,6 +1,7 @@
 module FirstData
 	module Currencies
-		CODES = ["AED", "AFN", "ALL", "AMD", "ANG", "AOA", "ARS", "AUD", "AWG", "AZN", 
+		CODES = [
+			"AED", "AFN", "ALL", "AMD", "ANG", "AOA", "ARS", "AUD", "AWG", "AZN", 
 			"BAM", "BBD", "BDT", "BGN", "BHD", "BIF", "BMD", "BND", "BOB", "BOV", 
 			"BRL", "BSD", "BTN", "BWP", "BYN", "BZD", "CAD", "CDF", "CHE", "CHF", 
 			"CHW", "CLF", "CLP", "CNY", "COP", "COU", "CRC", "CUC", "CUP", "CVE", 
@@ -17,6 +18,7 @@ module FirstData
 			"TND", "TOP", "TRY", "TTD", "TWD", "TZS", "UAH", "UGX", "USD", "USN", 
 			"UYI", "UYU", "UZS", "VEF", "VND", "VUV", "WST", "XAF", "XAG", "XAU", 
 			"XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XOF", "XPD", "XPF", "XPT", 
-			"XSU", "XTS", "XUA", "XXX", "YER", "ZAR", "ZMW", "ZWL"]
+			"XSU", "XTS", "XUA", "XXX", "YER", "ZAR", "ZMW", "ZWL"
+		]
 	end
 end
