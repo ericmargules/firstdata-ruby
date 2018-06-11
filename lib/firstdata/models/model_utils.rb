@@ -54,5 +54,13 @@ module FirstData
 			end
 			self_hash
 		end
+
+		def set_list_items(attr_name, obj)
+			items = []
+			instance_variable_get(attr_name).each do |item|
+				items << obj.new(item)
+			end
+			instance_variable_set(attr_name, items)
+		end
 	end
 end

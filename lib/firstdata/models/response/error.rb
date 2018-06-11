@@ -12,6 +12,7 @@ module FirstData
 
 		def initialize(params)
 			set_attributes(params)
+			set_list_items('details', ErrorDetails)
 		end
 	end
 end

@@ -9,7 +9,6 @@ module FirstData
 			:orderId,
 			:transactionType,
 			:authorizationCode,
-			:avsResponse,
 			:securityCodeResponse,
 			:brand,
 			:country,
@@ -17,11 +16,12 @@ module FirstData
 			:clientTransactionId,
 			:transactionTime,
 			:transactionStatus,
-			:authenticationRedirect,
 		]
 		
 		OBJ_ATTR = {
+			avsResponse: AvsResponse,
 			approvedAmount: Amount,
+			authenticationRedirect: AuthenticationRedirect,
 			error: ResponseError
 		}
 		

@@ -6,14 +6,14 @@ module FirstData
 			:transactionType,
 			:storeId,
 			:clientTransactionId,
-			:basketItems,
-			:additionalDetails
+			:basketItems
 		]
 
 		OBJ_ATTR = {
 			amount: Amount,
 			paymentMethod: PaymentMethod,
 			order: Order,
+			additionalDetails: AdditionalDetails,
 			splitShipment: SplitShipment,
 			industrySpecificExtensions: IndustrySpecificExtensions
 		}
@@ -22,6 +22,7 @@ module FirstData
 
 		def initialize(params)
 			set_attributes(params)
+			set_list_items('basket_items', BasketItem)
 		end
 	end
 end

@@ -1,18 +1,19 @@
 module FirstData
-	class CertificateInquiryResponse
+	class AuthResultSecure3d
 		include ModelUtils
 
 		ATTR = [
-			:clientRequestId,
-			:apiTraceId,
-			:certificates
+			:type,
+			:verificationResponse,
+			:payerAuthenticationResponse,
+			:authenticationValue,
+			:xid
 		]
 		
 		attr_reader *ATTR
 
 		def initialize(params)
 			set_attributes(params)
-			set_list_items('certificates', Certificate)
 		end
 	end
 end

@@ -52,8 +52,7 @@ module FirstData
 			process(PrimaryTransaction.new(args.merge(:transactionType => "SALE")))
 		end
 		
-		def process(body, path="")
-			# create message signature
+		def process(body="", path="")
 			_process("/payments" + path, body)
 		end
 

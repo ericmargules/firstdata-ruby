@@ -2,12 +2,12 @@ module FirstData
 	class AuthenticationResult
 		include ModelUtils
 
-		ATTR = [
-			:applePay,
-			:secure3d
-		]
+		OBJ_ATTR = {
+			applePay: AuthResultApplePay,
+			secure3d: AuthResultSecure3d
+		}
 
-		attr_reader *ATTR
+		attr_reader *OBJ_ATTR.keys
 
 		def initialize(params)
 			set_attributes(params)

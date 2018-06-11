@@ -1,18 +1,16 @@
 module FirstData
-	class ApplePay
+	class AuthenticationRedirect
 		include ModelUtils
 
 		ATTR = [
-			:data,
-			:signature,
-			:version,
-			:appId
+			:type,
+			:targetUrl
 		]
-		
-		OBJ_ATTR = {
-			header: ApplePayHeader
-		}
 
+		OBJ_ATTR = {
+			params: Params
+		}
+		
 		attr_reader *ATTR, *OBJ_ATTR.keys
 
 		def initialize(params)

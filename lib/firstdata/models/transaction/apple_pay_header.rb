@@ -1,18 +1,18 @@
 module FirstData
-	class CertificateInquiryResponse
+	class ApplePayHeader
 		include ModelUtils
 
 		ATTR = [
-			:clientRequestId,
-			:apiTraceId,
-			:certificates
+			:applicationDataHash,
+			:ephemeralPublicKey,
+			:publicKeyHash,
+			:transactionId
 		]
-		
+
 		attr_reader *ATTR
 
 		def initialize(params)
 			set_attributes(params)
-			set_list_items('certificates', Certificate)
 		end
 	end
 end

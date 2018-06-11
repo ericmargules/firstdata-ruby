@@ -4,10 +4,9 @@ module FirstData
 
 		ATTR = [
 			:number,
-			:cardCodeValue,
+			:securityCode,
 			:cardFunction,
 			:cardholderName,
-			:authenticationRequest,
 			:brand,
 			:wallet_provider_id,
 			:enableTokenization
@@ -15,6 +14,7 @@ module FirstData
 
 		OBJ_ATTR = {
 			expiryDate: Expiration,
+			authenticationRequest: AuthenticationRequest,
 			authenticationResult: AuthenticationResult
 		}
 
