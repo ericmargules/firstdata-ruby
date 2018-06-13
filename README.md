@@ -1,10 +1,15 @@
 # FirstData Global Payment API Ruby library
 
 ## Install
-   ```gem install firstdata
 
-   OR
-    ```gem 'firstdata'
+```ruby
+gem install firstdata
+```
+OR
+
+```ruby
+gem 'firstdata'
+```
 
 ## Example Transaction       
 
