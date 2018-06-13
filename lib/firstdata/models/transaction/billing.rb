@@ -4,7 +4,7 @@ module FirstData
 
 		ATTR = [
 			:name,
-			:personalNumber,
+			:personal_number,
 			:birthdate,
 			:gender,
 		]

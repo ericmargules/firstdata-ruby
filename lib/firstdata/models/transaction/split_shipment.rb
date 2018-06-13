@@ -3,8 +3,8 @@ module FirstData
 		include ModelUtils
 
 		ATTR = [
-			:totalCount,
-			:finalShipment
+			:total_count,
+			:final_shipment
 		]
 
 		attr_reader *ATTR

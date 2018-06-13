@@ -3,7 +3,7 @@ module FirstData
 		include ModelUtils
 
 		ATTR = [
-			:chargeItem
+			:charge_item
 		]
 
 		attr_reader *ATTR

@@ -8,7 +8,7 @@ module FirstData
 			:address2,
 			:locality,
 			:region,
-			:postalCode,
+			:postal_code,
 			:country
 		]
 		

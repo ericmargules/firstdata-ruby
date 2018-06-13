@@ -3,8 +3,8 @@ module FirstData
 		include ModelUtils
 
 		ATTR = [
-			:appLabel,
-			:walletProvider,
+			:app_label,
+			:wallet_provider,
 			:permissions
 		]
 		

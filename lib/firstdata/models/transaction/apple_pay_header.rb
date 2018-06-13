@@ -3,10 +3,10 @@ module FirstData
 		include ModelUtils
 
 		ATTR = [
-			:applicationDataHash,
-			:ephemeralPublicKey,
-			:publicKeyHash,
-			:transactionId
+			:application_data_hash,
+			:ephemeral_public_key,
+			:public_key_hash,
+			:transaction_id
 		]
 
 		attr_reader *ATTR

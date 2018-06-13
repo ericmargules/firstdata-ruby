@@ -3,12 +3,12 @@ module FirstData
 		include ModelUtils
 
 		ATTR = [
-			:referenceNumber,
+			:reference_number,
 			:comments,
-			:dynamicMerchantName,
-			:invoiceNumber,
-			:purchaseOrderNumber,
-			:recurringType
+			:dynamic_merchant_name,
+			:invoice_number,
+			:purchase_order_number,
+			:recurring_type
 		]
 		
 		attr_reader *ATTR

@@ -20,7 +20,7 @@ module FirstData
 
 		def clean_params(params)
 			cleaned_params = {}
-			params.each { |k,v| cleaned_params[k.to_sym] = v }
+			params.each { |k,v| cleaned_params[to_snake_case(k.to_s).to_sym] = v }
 			cleaned_params
 		end
 
@@ -50,17 +50,29 @@ module FirstData
 				else
 					value = value.to_s
 				end
-				self_hash[var.to_s.sub(/^@/, '')] = value
+				self_hash[to_pascal_case(var.to_s.sub(/^@/, ''))] = value
 			end
 			self_hash
 		end
 
+		def to_snake_case(str)
+			str.gsub(/::/, '/').
+				gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').
+				gsub(/([a-z\d])([A-Z])/,'\1_\2').
+				tr("-", "_").
+				downcase
+		end
+
+		def to_pascal_case(str)
+			first, rest = str.split('_')[0], str.split('_')[1..-1]
+			rest.map(&:capitalize).unshift(first.downcase).join
+		end
+
 		def set_list_items(attr_name, obj)
 			items = []
-			instance_variable_get(attr_name).each do |item|
-				items << obj.new(item)
-			end
-			instance_variable_set(attr_name, items)
+			attrs = instance_variable_get("@#{attr_name}") 
+			attrs.each{ |item| items << obj.new(item) } if attrs
+			instance_variable_set("@#{attr_name}", items) if !items.empty?
 		end
 	end
 end

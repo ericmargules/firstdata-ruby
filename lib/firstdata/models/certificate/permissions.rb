@@ -3,8 +3,8 @@ module FirstData
 		include ModelUtils
 
 		ATTR = [
-			:authType,
-			:authId
+			:auth_type,
+			:auth_id
 		]
 		
 		attr_reader *ATTR

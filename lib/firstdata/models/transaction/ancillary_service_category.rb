@@ -3,7 +3,7 @@ module FirstData
 		include ModelUtils
 
 		ATTR = [
-			:serviceCategory
+			:service_category
 		]
 		
 		attr_reader *ATTR

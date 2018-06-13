@@ -3,8 +3,8 @@ module FirstData
 		include ModelUtils
 
 		OBJ_ATTR = {
-			transactionAmount: Amount,
-			paymentCard: PaymentCard
+			transaction_amount: Amount,
+			payment_card: PaymentCard
 		}
 		
 		attr_reader *OBJ_ATTR.keys

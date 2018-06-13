@@ -4,8 +4,8 @@ module FirstData
 
 		ATTR = [
 			:certificate,
-			:appLabel,
-			:walletProvider,
+			:app_label,
+			:wallet_provider,
 			:status
 		]
 		

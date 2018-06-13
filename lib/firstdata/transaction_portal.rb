@@ -62,9 +62,6 @@ module FirstData
 		end
 
 		def parse_response(response)
-			# Do error stuff if response.code != "200"
-			raise ArgumentError.new (response.body) unless response.code == "200" 
-
 			TransactionResponse.new(JSON.parse(response.body))
 		end
 	end

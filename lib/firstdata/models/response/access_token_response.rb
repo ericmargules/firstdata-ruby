@@ -3,10 +3,10 @@ module FirstData
 		include ModelUtils
 
 		ATTR = [
-			:accessToken,
-			:clientRequestId,
-			:apiTraceId,
-			:transactionStatus
+			:access_token,
+			:client_request_id,
+			:api_trace_id,
+			:transaction_status
 		]
 
 		OBJ_ATTR = {

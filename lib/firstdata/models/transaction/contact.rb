@@ -4,7 +4,7 @@ module FirstData
 
 		ATTR = [
 			:phone,
-			:mobilePhone,
+			:mobile_phone,
 			:fax,
 			:email
 		]

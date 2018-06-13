@@ -9,7 +9,7 @@ module FirstData
 		]
 
 		OBJ_ATTR = {
-			unitPrice: Amount,
+			unit_price: Amount,
 		}
 
 		attr_reader *ATTR, *OBJ_ATTR.keys

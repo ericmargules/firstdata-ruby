@@ -4,7 +4,7 @@ module FirstData
 
 		ATTR = [
 			:type,
-			:targetUrl
+			:target_url
 		]
 
 		OBJ_ATTR = {

@@ -3,11 +3,11 @@ module FirstData
 		include ModelUtils
 
 		ATTR = [
-			:storeId
+			:store_id
 		]
 
 		OBJ_ATTR = {
-			paymentMethod: PaymentMethod
+			payment_method: PaymentMethod
 		}
 
 		attr_reader *ATTR, *OBJ_ATTR.keys

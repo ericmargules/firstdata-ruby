@@ -7,9 +7,9 @@ module FirstData
 		]
 
 		OBJ_ATTR = {
-			paymentCard: PaymentCard, 
-			sepaDirectDebit: SepaDirectDebit, 
-			applePay: ApplePay
+			payment_card: PaymentCard, 
+			sepa_direct_debit: SepaDirectDebit, 
+			apple_pay: ApplePay
 		}
 		
 		attr_reader *ATTR, *OBJ_ATTR.keys
@@ -22,11 +22,11 @@ module FirstData
 		def detect_payment_method(params)
 			case params[:type].to_s
 			when "PAYMENT_CARD"
-				params[:paymentCard] = PaymentCard.new(params) if params[:number]
+				params[:payment_card] = PaymentCard.new(params) if params[:number]
 			when "SEPA_DIRECT_DEBIT"
-				params[:sepaDirectDebit] = SepaDirectDebit.new(params) if params[:iban]
+				params[:sepa_direct_debit] = SepaDirectDebit.new(params) if params[:iban]
 			when "applePay"
-				params[:applePay] = ApplePay.new(params) if params[:data]
+				params[:apple_pay] = ApplePay.new(params) if params[:data]
 			end
 		end
 	end

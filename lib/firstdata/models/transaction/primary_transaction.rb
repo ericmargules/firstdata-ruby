@@ -3,19 +3,19 @@ module FirstData
 		include ModelUtils
 
 		ATTR = [
-			:transactionType,
-			:storeId,
-			:clientTransactionId,
-			:basketItems
+			:transaction_type,
+			:store_id,
+			:client_transaction_id,
+			:basket_items
 		]
 
 		OBJ_ATTR = {
 			amount: Amount,
-			paymentMethod: PaymentMethod,
+			payment_method: PaymentMethod,
 			order: Order,
-			additionalDetails: AdditionalDetails,
-			splitShipment: SplitShipment,
-			industrySpecificExtensions: IndustrySpecificExtensions
+			additional_details: AdditionalDetails,
+			split_shipment: SplitShipment,
+			industry_specific_extensions: IndustrySpecificExtensions
 		}
 		
 		attr_reader *ATTR, *OBJ_ATTR.keys

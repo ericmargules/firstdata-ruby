@@ -3,8 +3,8 @@ module FirstData
 		include ModelUtils
 		
 		ATTR = [
-			:clientRequestId,
-			:apiTraceId,
+			:client_request_id,
+			:api_trace_id,
 			:certificate
 		]
 		

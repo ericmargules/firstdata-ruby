@@ -3,7 +3,7 @@ module FirstData
 		include ModelUtils
 
 		OBJ_ATTR = {
-			decryptedData: DecryptedData
+			decrypted_data: DecryptedData
 		}
 		
 		attr_reader *OBJ_ATTR.keys

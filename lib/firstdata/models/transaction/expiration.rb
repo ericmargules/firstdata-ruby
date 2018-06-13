@@ -10,12 +10,12 @@ module FirstData
 		attr_reader *ATTR
 
 		def initialize(params)
-			filter_expiry_date(params) if params[:expiryDate]
+			filter_expiry_date(params) if params[:expiry_date]
 			set_attributes(params)
 		end
 
 		def filter_expiry_date(params)
-			expiration = params[:expiryDate].to_s
+			expiration = params[:expiry_date].to_s
 			if expiration.length == 4 
 				params[:month] = expiration[0..1]  
 				params[:year] = expiration[2..3]

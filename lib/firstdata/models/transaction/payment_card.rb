@@ -4,29 +4,29 @@ module FirstData
 
 		ATTR = [
 			:number,
-			:securityCode,
-			:cardFunction,
-			:cardholderName,
+			:security_code,
+			:card_function,
+			:cardholder_name,
 			:brand,
 			:wallet_provider_id,
-			:enableTokenization
+			:enable_tokenization
 		]
 
 		OBJ_ATTR = {
-			expiryDate: Expiration,
-			authenticationRequest: AuthenticationRequest,
-			authenticationResult: AuthenticationResult
+			expiry_date: Expiration,
+			authentication_request: AuthenticationRequest,
+			authentication_result: AuthenticationResult
 		}
 
 		attr_reader *ATTR, *OBJ_ATTR.keys
 
 		def initialize(params)
-			format_expiration(params) if params[:expiryDate]
+			format_expiration(params) if params[:expiry_date]
 			set_attributes(params)
 		end
 
 		def format_expiration(params)
-			params[:expiryDate] = Expiration.new(expiryDate: params[:expiryDate]) if params[:expiryDate].is_a?(String) or params[:expiryDate].is_a?(Fixnum)
+			params[:expiry_date] = Expiration.new(expiry_date: params[:expiry_date]) if params[:expiry_date].is_a?(String) or params[:expiry_date].is_a?(Fixnum)
 		end
 	end
 end

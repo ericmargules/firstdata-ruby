@@ -4,9 +4,9 @@ module FirstData
 
 		ATTR = [
 			:type,
-			:verificationResponse,
-			:payerAuthenticationResponse,
-			:authenticationValue,
+			:verification_response,
+			:payerAuthentication_response,
+			:authentication_value,
 			:xid
 		]
 		

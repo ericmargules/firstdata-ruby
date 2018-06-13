@@ -3,8 +3,8 @@ module FirstData
 		include ModelUtils
 
 		ATTR = [
-			:streetNumberMatch,
-			:postalCodeMatch
+			:street_number_match,
+			:postal_code_match
 		]
 		
 		attr_reader *ATTR

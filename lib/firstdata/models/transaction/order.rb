@@ -3,7 +3,7 @@ module FirstData
 		include ModelUtils
 
 		ATTR = [
-			:orderId
+			:order_id
 		]
 
 		OBJ_ATTR = {

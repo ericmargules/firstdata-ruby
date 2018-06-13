@@ -4,12 +4,12 @@ module FirstData
 
 		ATTR = [
 			:subtotal,
-			:vatAmount,
-			:localTax,
+			:vat_amount,
+			:local_tax,
 			:shipping,
 			:cashback,
 			:tip,
-			:convenienceFee
+			:convenience_fee
 		]
 
 		attr_reader *ATTR

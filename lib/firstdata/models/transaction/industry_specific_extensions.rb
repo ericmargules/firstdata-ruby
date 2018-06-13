@@ -5,7 +5,7 @@ module FirstData
 		OBJ_ATTR = {
 			:airline => Airline,
 			:lodging => Lodging,
-			:carRental => CarRental
+			:car_rental => CarRental
 		}
 
 		attr_reader *OBJ_ATTR.keys

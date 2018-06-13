@@ -5,7 +5,7 @@ module FirstData
 		ATTR = [
 			:reference,
 			:url,
-			:signatureDate,
+			:signature_date,
 			:type
 		]
 

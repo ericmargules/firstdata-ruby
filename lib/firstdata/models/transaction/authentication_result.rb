@@ -3,8 +3,8 @@ module FirstData
 		include ModelUtils
 
 		OBJ_ATTR = {
-			applePay: AuthResultApplePay,
-			secure3d: AuthResultSecure3d
+			apple_pay: AuthResultApplePay,
+			secure_3d: AuthResultSecure3d
 		}
 
 		attr_reader *OBJ_ATTR.keys

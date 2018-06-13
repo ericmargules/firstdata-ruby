@@ -3,8 +3,8 @@ module FirstData
 		include ModelUtils
 
 		ATTR = [
-			:onlinePaymentCryptogram,
-			:eciIndicator
+			:online_payment_cryptogram,
+			:eci_indicator
 		]
 		
 		attr_reader *ATTR
