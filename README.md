@@ -2,11 +2,12 @@
 
 ## Install
 
+From the command line:
 ```ruby
 gem install firstdata
 ```
-OR
 
+Within Rails
 ```ruby
 gem 'firstdata'
 ```
