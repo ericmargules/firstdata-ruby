@@ -7,7 +7,7 @@ From the command line:
 gem install firstdata
 ```
 
-Within Rails
+Or within Rails
 ```ruby
 gem 'firstdata'
 ```
@@ -37,7 +37,7 @@ gem 'firstdata'
     })
 
     if sale.is_successful?
-        puts "Transaction" + sale.ipg_transaction_id + " was successful!"
+        puts "Transaction " + sale.ipg_transaction_id + " was successful!"
     else
         puts "Error processing transaction"
         puts "Message: " + sale.error.message

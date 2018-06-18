@@ -15,7 +15,7 @@ module FirstData
 			:terminal_id,
 			:client_transaction_id,
 			:transaction_time,
-			:transaction_status,
+			:transaction_status
 		]
 		
 		OBJ_ATTR = {

@@ -11,7 +11,7 @@ module FirstData
 	
 		attr_accessor *ATTR
 
-		def initialize(params={})
+		def initialize(params)
 			ATTR.each { |attr| instance_variable_set "@#{attr}", params[attr] }
 		end
 
