@@ -32,7 +32,7 @@ module FirstData
 
 		# Reverse existing action on transaction
 		def void(trans_id)
-			path = "/payments/#{trans_id}/void"
+			path = "/#{trans_id}/void"
 			_process(path)
 		end
 

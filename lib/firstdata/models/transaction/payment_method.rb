@@ -15,18 +15,17 @@ module FirstData
 		attr_reader *ATTR, *OBJ_ATTR.keys
 
 		def initialize(params)
-			detect_payment_method(params)
 			set_attributes(params)
+			detect_payment_method if !@type
 		end
 
-		def detect_payment_method(params)
-			case params[:type].to_s
-			when "PAYMENT_CARD"
-				params[:payment_card] = PaymentCard.new(params) if params[:number]
-			when "SEPA_DIRECT_DEBIT"
-				params[:sepa_direct_debit] = SepaDirectDebit.new(params) if params[:iban]
-			when "applePay"
-				params[:apple_pay] = ApplePay.new(params) if params[:data]
+		def detect_payment_method
+			if @payment_card 
+				@type = "PAYMENT_CARD"
+			elsif @sepa_direct_debit
+			 	@type = "SEPA_DIRECT_DEBIT"
+			elsif @apple_pay
+			 	@type = "APPLE_PAY"
 			end
 		end
 	end

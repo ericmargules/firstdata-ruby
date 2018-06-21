@@ -27,12 +27,9 @@ gem 'firstdata'
           total: "100.00",
           currency: "USD"
         },
-        payment_method: {
-          type: "PAYMENT_CARD",
-          payment_card: {
-            number: "4111111111111111",
-            expiry_date: "1223"
-          }
+        payment_card: {
+          number: "4111111111111111",
+          expiry_date: "1223"
         }
     })
 
